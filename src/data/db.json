@@ -1,0 +1,299 @@
+{
+  "users": [
+    {
+      "name": "Arvind Kejriwal",
+      "username": "cm",
+      "password": "password",
+      "role": "Chief Minister",
+      "trustScore": 100,
+      "resolutionAccuracy": 100,
+      "citizenSatisfaction": 100,
+      "falseClosures": 0
+    },
+    {
+      "name": "Anil Baijal",
+      "username": "depthead_power",
+      "password": "password",
+      "role": "Department Head",
+      "department": "Power Department",
+      "trustScore": 100,
+      "resolutionAccuracy": 100,
+      "citizenSatisfaction": 100,
+      "falseClosures": 0
+    },
+    {
+      "name": "Vijay Dev",
+      "username": "depthead_water",
+      "password": "password",
+      "role": "Department Head",
+      "department": "Water Department",
+      "trustScore": 100,
+      "resolutionAccuracy": 100,
+      "citizenSatisfaction": 100,
+      "falseClosures": 0
+    },
+    {
+      "name": "Inspector Rajesh Kumar",
+      "username": "officer_power",
+      "password": "password",
+      "role": "Officer",
+      "department": "Power Department",
+      "district": "North Delhi",
+      "trustScore": 92,
+      "resolutionAccuracy": 88,
+      "citizenSatisfaction": 85,
+      "falseClosures": 1
+    },
+    {
+      "name": "Sanjay Sharma",
+      "username": "officer_water",
+      "password": "password",
+      "role": "Officer",
+      "department": "Water Department",
+      "district": "East Delhi",
+      "trustScore": 68,
+      "resolutionAccuracy": 70,
+      "citizenSatisfaction": 62,
+      "falseClosures": 4
+    },
+    {
+      "name": "Meenakshi Dey",
+      "username": "officer_sanitation",
+      "password": "password",
+      "role": "Officer",
+      "department": "Sanitation Department",
+      "district": "South Delhi",
+      "trustScore": 98,
+      "resolutionAccuracy": 96,
+      "citizenSatisfaction": 94,
+      "falseClosures": 0
+    },
+    {
+      "name": "Gourav Kumar",
+      "username": "citizen",
+      "password": "password",
+      "role": "Citizen",
+      "trustScore": 100,
+      "resolutionAccuracy": 100,
+      "citizenSatisfaction": 100,
+      "falseClosures": 0
+    }
+  ],
+  "grievances": [
+    {
+      "title": "Exposed live wires and broken streetlight near Sector 15",
+      "description": "Streetlight failure with exposed electrical wires causing immediate safety hazard to children playing nearby. High risk of shock in the monsoon season.",
+      "citizen": {
+        "name": "Amit Patel",
+        "phone": "9876543210",
+        "email": "amit.patel@gmail.com",
+        "address": "Pocket 4, Sector 15",
+        "district": "North Delhi",
+        "pinCode": "110085"
+      },
+      "location": {
+        "lat": 28.7247,
+        "lng": 77.1205
+      },
+      "status": "Resolved",
+      "priority": "High",
+      "category": "Electricity",
+      "department": "Power Department",
+      "severity": "High",
+      "anonymous": false,
+      "images": [],
+      "createdAt": "2026-06-13T17:45:00.705Z",
+      "updatedAt": "2026-06-16T17:45:00.705Z",
+      "aiAnalysis": {
+        "category": "Electricity",
+        "department": "Power Department",
+        "priority": "High",
+        "sentiment": "Negative / Dangerous",
+        "summary": "Streetlight failure with exposed electrical wires causing safety hazard.",
+        "keywords": [
+          "streetlight",
+          "wires",
+          "exposed",
+          "safety"
+        ],
+        "urgencyScore": 91
+      },
+      "assignedOfficer": {
+        "id": "officer_power",
+        "name": "Inspector Rajesh Kumar",
+        "trustScore": 92
+      },
+      "resolution": {
+        "remarks": "Replaced the damaged streetlight fixture and safely taped and insulated the exposed cables inside the pole junction box. Tested and verified working.",
+        "images": [],
+        "timestamp": "2026-06-16T17:45:00.705Z"
+      },
+      "falseClosureCount": 0,
+      "isDuplicate": false,
+      "supportingCount": 0,
+      "isCriticalAlert": true,
+      "emergencyScore": 91
+    },
+    {
+      "title": "Contaminated muddy water supply in Dwarka Sector 12",
+      "description": "The tap water supplied for the last 48 hours is dark brown, smelling foul, and muddy. We cannot use it for cooking or bathing. Multiple households affected.",
+      "citizen": {
+        "name": "Preeti Sharma",
+        "phone": "9911223344",
+        "email": "preeti.sharma@yahoo.com",
+        "address": "Delhi Apartments, Sector 12",
+        "district": "West Delhi",
+        "pinCode": "110075"
+      },
+      "location": {
+        "lat": 28.5921,
+        "lng": 77.046
+      },
+      "status": "Pending",
+      "priority": "Urgent",
+      "category": "Water",
+      "department": "Water Department",
+      "severity": "High",
+      "anonymous": false,
+      "images": [],
+      "createdAt": "2026-06-17T17:45:00.705Z",
+      "updatedAt": "2026-06-17T17:45:00.705Z",
+      "aiAnalysis": {
+        "category": "Water",
+        "department": "Water Department",
+        "priority": "Urgent",
+        "sentiment": "Negative / Health Hazard",
+        "summary": "Muddy and foul-smelling tap water supply affecting multiple households in Dwarka Sector 12.",
+        "keywords": [
+          "water supply",
+          "muddy",
+          "contaminated",
+          "foul smell"
+        ],
+        "urgencyScore": 89
+      },
+      "assignedOfficer": {
+        "id": "officer_water",
+        "name": "Sanjay Sharma",
+        "trustScore": 68
+      },
+      "falseClosureCount": 0,
+      "isDuplicate": false,
+      "supportingCount": 0,
+      "isCriticalAlert": true,
+      "emergencyScore": 89
+    },
+    {
+      "title": "Potholes on Ring Road near Lajpat Nagar Metro Station",
+      "description": "Large potholes have developed on the main flyover exit, causing cars to brake suddenly and creating massive traffic jams during peak office hours.",
+      "citizen": {
+        "name": "Rajesh Malhotra",
+        "phone": "9810054321",
+        "email": "rajesh.m@gmail.com",
+        "address": "K-Block, Lajpat Nagar II",
+        "district": "South Delhi",
+        "pinCode": "110024"
+      },
+      "location": {
+        "lat": 28.5708,
+        "lng": 77.2372
+      },
+      "status": "In Progress",
+      "priority": "High",
+      "category": "Road",
+      "department": "Public Works Department",
+      "severity": "Medium",
+      "anonymous": true,
+      "images": [],
+      "createdAt": "2026-06-15T17:45:00.705Z",
+      "updatedAt": "2026-06-16T17:45:00.705Z",
+      "aiAnalysis": {
+        "category": "Road",
+        "department": "Public Works Department",
+        "priority": "High",
+        "sentiment": "Frustrated",
+        "summary": "Large potholes near Lajpat Nagar flyover causing traffic jams and vehicle hazards.",
+        "keywords": [
+          "potholes",
+          "road damage",
+          "traffic",
+          "lajpat nagar"
+        ],
+        "urgencyScore": 72
+      },
+      "assignedOfficer": {
+        "id": "officer_sanitation",
+        "name": "Meenakshi Dey",
+        "trustScore": 98
+      },
+      "falseClosureCount": 0,
+      "isDuplicate": false,
+      "supportingCount": 0,
+      "isCriticalAlert": false,
+      "emergencyScore": 0
+    },
+    {
+      "title": "Garbage piled up near Mayur Vihar Phase 1 market",
+      "description": "The garbage bin in Mayur Vihar Phase 1 block pocket 2 market is overflowing. It has not been cleared for 7 days. Stray dogs are scattering trash, smelling extremely bad.",
+      "citizen": {
+        "name": "Karan Singh",
+        "phone": "9560112233",
+        "email": "karan.singh@gmail.com",
+        "address": "Pocket 2, Mayur Vihar Phase 1",
+        "district": "East Delhi",
+        "pinCode": "110091"
+      },
+      "location": {
+        "lat": 28.6095,
+        "lng": 77.2912
+      },
+      "status": "Reopened",
+      "priority": "Medium",
+      "category": "Sanitation",
+      "department": "Sanitation Department",
+      "severity": "Medium",
+      "anonymous": false,
+      "images": [],
+      "createdAt": "2026-06-12T17:45:00.705Z",
+      "updatedAt": "2026-06-17T17:45:00.705Z",
+      "aiAnalysis": {
+        "category": "Sanitation",
+        "department": "Sanitation Department",
+        "priority": "Medium",
+        "sentiment": "Unhappy",
+        "summary": "Overflowing garbage dump site not cleared for a week causing hygiene concerns.",
+        "keywords": [
+          "garbage",
+          "trash",
+          "overflowing",
+          "hygiene"
+        ],
+        "urgencyScore": 54
+      },
+      "assignedOfficer": {
+        "id": "officer_water",
+        "name": "Sanjay Sharma",
+        "trustScore": 68
+      },
+      "resolution": {
+        "remarks": "Sent garbage truck, bin cleared. (Resolved but citizen disputed)",
+        "images": [],
+        "timestamp": "2026-06-15T17:45:00.705Z"
+      },
+      "falseClosureCount": 1,
+      "isDuplicate": false,
+      "supportingCount": 0,
+      "isCriticalAlert": false,
+      "emergencyScore": 0
+    }
+  ],
+  "auditLogs": [
+    {
+      "action": "System Initialized",
+      "performedBy": "System Administrator",
+      "role": "Chief Minister",
+      "details": "NAGRIK Governance Platform initialized with seed database.",
+      "timestamp": "2026-06-18T17:45:00.705Z"
+    }
+  ]
+}
