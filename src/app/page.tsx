@@ -116,14 +116,14 @@ export default function LandingPage() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: idx * 0.1 }}
-            className="bg-white dark:bg-slate-900 border border-border-color rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow flex items-start justify-between"
+            className="glass-card rounded-xl p-5 shadow-sm flex items-start justify-between"
           >
             <div>
-              <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">{s.label}</span>
-              <div className="text-2xl font-black text-slate-900 dark:text-white mt-1">{s.value}</div>
+              <span className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">{s.label}</span>
+              <div className="text-2xl font-black text-slate-900 dark:text-slate-150 mt-1">{s.value}</div>
               <div className="text-[10px] text-slate-400 dark:text-slate-500 font-bold mt-0.5">{s.subtext}</div>
             </div>
-            <div className="bg-slate-100 dark:bg-slate-800 p-2.5 rounded-lg">
+            <div className="bg-slate-100/50 dark:bg-slate-800/50 p-2.5 rounded-lg border border-border-color">
               {s.icon}
             </div>
           </motion.div>
@@ -133,8 +133,8 @@ export default function LandingPage() {
       {/* Feature Grid Section */}
       <section className="flex flex-col gap-8">
         <div className="text-center max-w-xl mx-auto flex flex-col gap-2">
-          <h2 className="text-2xl font-black text-slate-955 dark:text-white">Governance Intelligence Network</h2>
-          <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">NAGRIK combines artificial intelligence and real-time mapping to ensure civic grievances are closed accurately.</p>
+          <h2 className="text-2xl font-black text-slate-900 dark:text-slate-100">Governance Intelligence Network</h2>
+          <p className="text-xs text-slate-500 dark:text-slate-400 font-bold">NAGRIK combines artificial intelligence and real-time mapping to ensure civic grievances are closed accurately.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -144,14 +144,14 @@ export default function LandingPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
-              className="bg-white dark:bg-slate-900 border border-border-color rounded-xl p-6 hover:border-[#0B3B82] dark:hover:border-blue-400 transition-colors shadow-sm flex flex-col gap-4"
+              className="glass-card rounded-xl p-6 shadow-sm flex flex-col gap-4"
             >
-              <div className="bg-slate-100 dark:bg-slate-800 p-3 rounded-xl w-fit">
+              <div className="bg-slate-100/50 dark:bg-slate-800/50 p-3 rounded-xl w-fit border border-border-color">
                 {f.icon}
               </div>
               <div>
-                <h3 className="font-extrabold text-sm text-slate-900 dark:text-white mb-2">{f.title}</h3>
-                <p className="text-xs text-slate-600 dark:text-slate-350 leading-relaxed font-medium">{f.desc}</p>
+                <h3 className="font-extrabold text-sm text-slate-900 dark:text-slate-150 mb-2">{f.title}</h3>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-bold">{f.desc}</p>
               </div>
             </motion.div>
           ))}

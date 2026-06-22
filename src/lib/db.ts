@@ -17,10 +17,11 @@ const ensureDataDir = () => {
 // Seed Data definition
 const seedUsers: IUser[] = [
   {
-    name: "Arvind Kejriwal",
+    name: "Rekha Gupta",
     username: "cm",
     password: "password",
     role: "Chief Minister",
+    avatar: "/rekha_gupta.png",
     trustScore: 100,
     resolutionAccuracy: 100,
     citizenSatisfaction: 100,

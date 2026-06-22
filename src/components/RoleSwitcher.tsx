@@ -37,28 +37,28 @@ export default function RoleSwitcher() {
   ];
 
   return (
-    <div className="bg-[#0B3B82] text-white border-b border-blue-900 py-1.5 px-4 sticky top-0 z-50 text-xs shadow-md">
+    <div className="bg-[#0B3B82]/95 backdrop-blur-md text-white border-b border-blue-800/40 py-1.5 px-4 sticky top-0 z-50 text-xs shadow-md">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
         <div className="flex items-center gap-2">
-          <span className="inline-flex items-center justify-center bg-red-600 px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase animation-pulse">
+          <span className="inline-flex items-center justify-center bg-red-600 px-2 py-0.5 rounded text-[10px] font-black tracking-wider uppercase animate-pulse">
             DEMO MODE
           </span>
-          <span className="font-medium text-blue-200">
-            Active Identity: <strong className="text-white font-bold">{user.name}</strong> ({user.role}) {user.department ? ` - ${user.department}` : ''}
+          <span className="font-semibold text-blue-200">
+            Active Identity: <strong className="text-white font-extrabold">{user.name}</strong> ({user.role}) {user.department ? ` - ${user.department}` : ''}
           </span>
         </div>
         
         <div className="flex items-center gap-1.5 flex-wrap">
-          <span className="text-blue-300 font-medium mr-1">Switch View:</span>
+          <span className="text-blue-200 font-bold mr-1">Switch View:</span>
           {rolesList.map((r) => (
             <button
               key={r.role}
               onClick={() => setRole(r.role)}
               title={r.desc}
-              className={`flex items-center gap-1 px-2.5 py-1 rounded transition-all duration-200 font-semibold cursor-pointer ${
+              className={`flex items-center gap-1 px-2.5 py-1 rounded transition-all duration-200 font-bold cursor-pointer ${
                 user.role === r.role
-                  ? 'bg-white text-[#0B3B82] shadow-sm scale-105'
-                  : 'bg-blue-950 text-blue-200 hover:bg-blue-900 hover:text-white'
+                  ? 'bg-white text-[#0B3B82] shadow-md scale-105'
+                  : 'bg-blue-950/40 text-blue-200 hover:bg-blue-900/60 hover:text-white border border-blue-800/30'
               }`}
             >
               {r.icon}

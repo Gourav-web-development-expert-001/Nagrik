@@ -36,7 +36,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-white dark:bg-slate-900 border-b border-border-color transition-all duration-300">
+    <nav className="glass-navbar sticky top-0 z-40 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Brand Logo & Title */}
@@ -47,12 +47,12 @@ export default function Navbar() {
               </div>
               <div>
                 <div className="flex items-center gap-1.5">
-                  <span className="font-bold text-lg tracking-wider text-[#0B3B82] dark:text-blue-400">NAGRIK</span>
-                  <span className="bg-blue-100 dark:bg-blue-900/50 text-[#0B3B82] dark:text-blue-300 text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-wider">
+                  <span className="font-extrabold text-lg tracking-wider text-[#0B3B82] dark:text-blue-400">NAGRIK</span>
+                  <span className="bg-blue-100/80 dark:bg-blue-900/50 text-[#0B3B82] dark:text-blue-300 text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-wider">
                     G&RI Kendra
                   </span>
                 </div>
-                <div className="text-[9px] font-semibold text-slate-500 dark:text-slate-400 tracking-tight uppercase">
+                <div className="text-[9px] font-semibold text-slate-550 dark:text-slate-400 tracking-tight uppercase">
                   Delhi CM Governance Intelligence Platform
                 </div>
               </div>
@@ -63,7 +63,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-6 text-sm font-semibold">
             <Link 
               href="/" 
-              className={`hover:text-[#0B3B82] dark:hover:text-blue-400 transition-colors ${
+              className={`hover:text-[#0B3B82] dark:hover:text-blue-450 transition-colors ${
                 pathname === '/' ? 'text-[#0B3B82] dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'
               }`}
             >
@@ -130,7 +130,7 @@ export default function Navbar() {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 rounded-lg transition-all border border-border-color cursor-pointer"
+              className="p-2 text-slate-500 hover:bg-slate-100/50 dark:text-slate-400 dark:hover:bg-slate-800/50 rounded-lg transition-all border border-border-color cursor-pointer glass-card bg-transparent shadow-none"
               aria-label="Toggle Theme"
             >
               {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
@@ -138,17 +138,24 @@ export default function Navbar() {
 
             {/* Profile Brief or Login */}
             <div className="flex items-center gap-2 border-l pl-3 border-border-color">
+              {user.avatar && (
+                <img 
+                  src={user.avatar} 
+                  alt={user.name} 
+                  className="w-8 h-8 rounded-full border border-slate-200 dark:border-slate-700 object-cover"
+                />
+              )}
               <div className="hidden sm:block text-right">
-                <div className="text-xs font-bold text-slate-900 dark:text-white">
+                <div className="text-xs font-black text-slate-900 dark:text-slate-100">
                   {user.name}
                 </div>
-                <div className="text-[10px] text-slate-500 dark:text-slate-400 font-semibold uppercase">
+                <div className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">
                   {user.role}
                 </div>
               </div>
               <button
                 onClick={handleLogout}
-                className="p-2 text-slate-500 hover:text-red-600 hover:bg-red-50 dark:text-slate-400 dark:hover:text-red-400 dark:hover:bg-red-950/20 rounded-lg border border-border-color transition-colors cursor-pointer"
+                className="p-2 text-slate-500 hover:text-red-600 hover:bg-red-50/50 dark:text-slate-400 dark:hover:text-red-400 dark:hover:bg-red-950/20 rounded-lg border border-border-color transition-colors cursor-pointer glass-card bg-transparent shadow-none"
                 title="Logout Session"
               >
                 <LogOut className="w-4 h-4" />

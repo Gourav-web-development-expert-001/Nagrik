@@ -9,11 +9,13 @@ export interface IUserProfile {
   role: 'Citizen' | 'Officer' | 'Department Head' | 'Chief Minister';
   department?: string;
   district?: string;
+  avatar?: string;
 }
 
 interface IRoleContext {
   user: IUserProfile;
   setRole: (role: IUserProfile['role']) => void;
+  updateUser: (fields: Partial<IUserProfile>) => void;
   isLoading: boolean;
 }
 
@@ -34,12 +36,14 @@ const mockProfiles: Record<IUserProfile['role'], IUserProfile> = {
     name: "Anil Baijal",
     username: "depthead_power",
     role: "Department Head",
-    department: "Power Department"
+    department: "Power Department",
+    avatar: "/anil_baijal.png"
   },
   'Chief Minister': {
-    name: "Arvind Kejriwal",
+    name: "Rekha Gupta",
     username: "cm",
-    role: "Chief Minister"
+    role: "Chief Minister",
+    avatar: "/rekha_gupta.png"
   }
 };
 
@@ -76,8 +80,15 @@ export function RoleProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
+  const updateUser = (fields: Partial<IUserProfile>) => {
+    setUserState(prev => ({
+      ...prev,
+      ...fields
+    }));
+  };
+
   return (
-    <RoleContext.Provider value={{ user, setRole, isLoading }}>
+    <RoleContext.Provider value={{ user, setRole, updateUser, isLoading }}>
       {children}
     </RoleContext.Provider>
   );

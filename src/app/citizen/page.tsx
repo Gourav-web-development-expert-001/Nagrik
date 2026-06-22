@@ -112,7 +112,7 @@ export default function CitizenDashboard() {
 
       {/* Action Banner Notification */}
       {actionMessage && (
-        <div className="bg-blue-550 bg-opacity-10 border border-blue-500 text-[#0B3B82] dark:text-blue-300 px-4 py-3 rounded-lg text-xs font-semibold flex items-center gap-2 animate-bounce">
+        <div className="bg-blue-500/10 border border-blue-500/20 text-[#0B3B82] dark:text-blue-300 px-4 py-3 rounded-lg text-xs font-bold flex items-center gap-2 animate-bounce glass-card shadow-none">
           <BrainCircuit className="w-5 h-5 text-[#0B3B82] dark:text-blue-400" />
           {actionMessage}
         </div>
@@ -120,43 +120,43 @@ export default function CitizenDashboard() {
 
       {/* KPI Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-white dark:bg-slate-900 border border-border-color p-4.5 rounded-xl flex items-center gap-4 shadow-sm">
-          <div className="bg-blue-100 dark:bg-blue-900/50 p-2.5 rounded-lg text-[#0B3B82] dark:text-blue-400">
+        <div className="glass-card p-4.5 rounded-xl flex items-center gap-4 shadow-sm">
+          <div className="bg-blue-100/80 dark:bg-blue-900/50 p-2.5 rounded-lg text-[#0B3B82] dark:text-blue-400 border border-border-color">
             <FileText className="w-5 h-5" />
           </div>
           <div>
-            <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Submitted</div>
-            <div className="text-xl font-black text-slate-900 dark:text-white">{total}</div>
+            <div className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Submitted</div>
+            <div className="text-xl font-black text-slate-900 dark:text-slate-100">{total}</div>
           </div>
         </div>
 
-        <div className="bg-white dark:bg-slate-900 border border-border-color p-4.5 rounded-xl flex items-center gap-4 shadow-sm">
-          <div className="bg-green-100 dark:bg-green-900/50 p-2.5 rounded-lg text-green-600 dark:text-green-400">
+        <div className="glass-card p-4.5 rounded-xl flex items-center gap-4 shadow-sm">
+          <div className="bg-green-100/80 dark:bg-green-900/50 p-2.5 rounded-lg text-green-600 dark:text-green-400 border border-border-color">
             <CheckCircle className="w-5 h-5" />
           </div>
           <div>
-            <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Resolved</div>
-            <div className="text-xl font-black text-slate-900 dark:text-white">{resolved}</div>
+            <div className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Resolved</div>
+            <div className="text-xl font-black text-slate-900 dark:text-slate-100">{resolved}</div>
           </div>
         </div>
 
-        <div className="bg-white dark:bg-slate-900 border border-border-color p-4.5 rounded-xl flex items-center gap-4 shadow-sm">
-          <div className="bg-slate-100 dark:bg-slate-800 p-2.5 rounded-lg text-slate-600 dark:text-slate-400">
+        <div className="glass-card p-4.5 rounded-xl flex items-center gap-4 shadow-sm">
+          <div className="bg-slate-100/80 dark:bg-slate-800/50 p-2.5 rounded-lg text-slate-600 dark:text-slate-400 border border-border-color">
             <Clock className="w-5 h-5" />
           </div>
           <div>
-            <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Pending Action</div>
-            <div className="text-xl font-black text-slate-900 dark:text-white">{pending}</div>
+            <div className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Pending Action</div>
+            <div className="text-xl font-black text-slate-900 dark:text-slate-100">{pending}</div>
           </div>
         </div>
 
-        <div className="bg-white dark:bg-slate-900 border border-border-color p-4.5 rounded-xl flex items-center gap-4 shadow-sm">
-          <div className="bg-red-100 dark:bg-red-900/50 p-2.5 rounded-lg text-red-655 dark:text-red-400">
+        <div className="glass-card p-4.5 rounded-xl flex items-center gap-4 shadow-sm">
+          <div className="bg-red-100/85 dark:bg-red-900/50 p-2.5 rounded-lg text-red-600 dark:text-red-400 border border-border-color">
             <AlertTriangle className="w-5 h-5" />
           </div>
           <div>
-            <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Critical Alerts</div>
-            <div className="text-xl font-black text-slate-900 dark:text-white">{critical}</div>
+            <div className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Critical Alerts</div>
+            <div className="text-xl font-black text-slate-900 dark:text-slate-100">{critical}</div>
           </div>
         </div>
       </div>
@@ -166,12 +166,12 @@ export default function CitizenDashboard() {
         
         {/* Left Column - Grievance List */}
         <div className="lg:col-span-2 flex flex-col gap-4">
-          <h2 className="font-extrabold text-sm text-slate-800 dark:text-slate-200 border-b pb-2 uppercase tracking-wide">My Grievance History</h2>
+          <h2 className="font-extrabold text-sm text-slate-800 dark:text-slate-200 border-b border-border-color pb-2 uppercase tracking-wide">My Grievance History</h2>
 
           {loading ? (
             <div className="text-center py-12 text-slate-400 font-bold text-xs">Retrieving database grievances...</div>
           ) : grievances.length === 0 ? (
-            <div className="bg-white dark:bg-slate-900 rounded-xl p-8 border border-dashed border-border-color text-center flex flex-col items-center gap-3">
+            <div className="glass-card rounded-xl p-8 border border-dashed border-border-color text-center flex flex-col items-center gap-3">
               <FileText className="w-10 h-10 text-slate-300" />
               <div className="font-bold text-slate-500 text-xs">No Grievances Lodged</div>
               <p className="text-[10px] text-slate-400 max-w-xs">You have not registered any grievances yet. Click "File New Grievance" above to submit.</p>
@@ -185,27 +185,27 @@ export default function CitizenDashboard() {
                 return (
                   <div 
                     key={id}
-                    className={`bg-white dark:bg-slate-900 border border-border-color rounded-xl p-5 shadow-sm transition-all ${
+                    className={`glass-card rounded-xl p-5 shadow-sm transition-all ${
                       g.isCriticalAlert ? 'border-l-4 border-l-red-500' : ''
                     }`}
                   >
                     <div className="flex justify-between items-start gap-4 flex-wrap mb-2.5">
                       <div>
-                        <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">{g.category} &bull; {g.department}</div>
-                        <h3 className="font-bold text-sm text-slate-950 dark:text-white mt-0.5">{g.title}</h3>
+                        <div className="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider">{g.category} &bull; {g.department}</div>
+                        <h3 className="font-bold text-sm text-slate-900 dark:text-slate-100 mt-0.5">{g.title}</h3>
                       </div>
                       <div className="flex items-center gap-2">
                         {getStatusBadge(g.status, g.isCriticalAlert)}
                       </div>
                     </div>
 
-                    <p className="text-xs text-slate-600 dark:text-slate-350 leading-relaxed font-medium mb-3.5">
+                    <p className="text-xs text-slate-650 dark:text-slate-300 leading-relaxed font-bold mb-3.5">
                       {g.description}
                     </p>
 
-                    <div className="flex items-center justify-between gap-4 text-[10px] text-slate-400 font-semibold border-t pt-3 flex-wrap">
+                    <div className="flex items-center justify-between gap-4 text-[10px] text-slate-450 dark:text-slate-500 font-semibold border-t border-border-color pt-3 flex-wrap">
                       <div className="flex items-center gap-1">
-                        <MapPin className="w-3.5 h-3.5 text-slate-400" />
+                        <MapPin className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
                         <span>{g.citizen.district} ({g.citizen.pinCode})</span>
                       </div>
                       <div>
@@ -215,8 +215,8 @@ export default function CitizenDashboard() {
 
                     {/* AI analysis tag preview */}
                     {g.aiAnalysis && (
-                      <div className="mt-3 bg-slate-50 dark:bg-slate-950 p-2.5 rounded-lg border border-border-color text-[10px] flex items-center justify-between flex-wrap gap-2">
-                        <span className="text-slate-500 font-bold flex items-center gap-1 uppercase tracking-wider">
+                      <div className="mt-3 bg-slate-50/50 dark:bg-slate-950/60 p-2.5 rounded-lg border border-border-color text-[10px] flex items-center justify-between flex-wrap gap-2">
+                        <span className="text-slate-500 dark:text-slate-450 font-bold flex items-center gap-1 uppercase tracking-wider">
                           <BrainCircuit className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" /> NAGRIK-AI Analysis
                         </span>
                         <div className="flex items-center gap-2 font-bold">
@@ -229,7 +229,7 @@ export default function CitizenDashboard() {
 
                     {/* ANTI FALSE CLOSURE BANNER (HERO FEATURE) */}
                     {showVerification && (
-                      <div className="mt-4 bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-900 rounded-xl p-4 flex flex-col gap-3">
+                      <div className="mt-4 bg-blue-500/10 dark:bg-blue-500/5 border border-blue-500/20 dark:border-blue-900/50 rounded-xl p-4 flex flex-col gap-3 shadow-sm">
                         <div className="flex items-start gap-2.5">
                           <AlertTriangle className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
                           <div>
@@ -241,11 +241,11 @@ export default function CitizenDashboard() {
                           </div>
                         </div>
                         
-                        <div className="flex justify-end gap-2.5 border-t border-blue-100 dark:border-blue-900/60 pt-3">
+                        <div className="flex justify-end gap-2.5 border-t border-blue-500/10 dark:border-blue-900/40 pt-3">
                           <button
                             disabled={verifyingId !== null}
                             onClick={() => handleVerification(id, 'NO')}
-                            className="bg-red-50 hover:bg-red-100 dark:bg-red-950/20 dark:hover:bg-red-950/40 text-red-700 dark:text-red-400 px-3.5 py-1.5 rounded-lg font-bold text-xs flex items-center gap-1 border border-red-200 dark:border-red-900 transition-colors cursor-pointer"
+                            className="bg-red-50 hover:bg-red-100 dark:bg-red-950/20 dark:hover:bg-red-950/40 text-red-700 dark:text-red-400 px-3.5 py-1.5 rounded-lg font-bold text-xs flex items-center gap-1 border border-red-250 dark:border-red-900 transition-colors cursor-pointer"
                           >
                             <ThumbsDown className="w-3.5 h-3.5" />
                             <span>NO, Reopen Issue</span>
@@ -271,15 +271,15 @@ export default function CitizenDashboard() {
         {/* Right Column - Map & Guidelines */}
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-2">
-            <h2 className="font-extrabold text-sm text-slate-800 dark:text-slate-200 border-b pb-2 uppercase tracking-wide">Live Grievance Mapping</h2>
+            <h2 className="font-extrabold text-sm text-slate-800 dark:text-slate-200 border-b border-border-color pb-2 uppercase tracking-wide">Live Grievance Mapping</h2>
             <div className="h-[280px]">
               <ComplaintMap grievances={grievances} />
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-900 border border-border-color rounded-xl p-5 shadow-sm">
-            <h3 className="font-extrabold text-xs text-slate-900 dark:text-white uppercase tracking-wider mb-2.5 border-b pb-1.5">Delhi Citizen Charter</h3>
-            <ul className="space-y-2.5 text-[11px] text-slate-500 dark:text-slate-400 font-medium">
+          <div className="glass-card rounded-xl p-5 shadow-sm">
+            <h3 className="font-extrabold text-xs text-slate-900 dark:text-white uppercase tracking-wider mb-2.5 border-b border-border-color pb-1.5">Delhi Citizen Charter</h3>
+            <ul className="space-y-2.5 text-[11px] text-slate-500 dark:text-slate-400 font-bold">
               <li className="flex items-start gap-1.5">
                 <span className="bg-blue-100 dark:bg-blue-900/40 text-[#0B3B82] dark:text-blue-400 px-1.5 py-0.2 rounded font-extrabold text-[9px] mt-0.5">1</span>
                 <span>All complaints are routed automatically by Gemini AI to correct departments.</span>

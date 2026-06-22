@@ -109,43 +109,43 @@ export default function NewGrievanceForm() {
     <div className="flex flex-col gap-6 w-full max-w-4xl mx-auto">
       {/* Header */}
       <div className="flex items-center gap-3 border-b border-border-color pb-4">
-        <Link href="/citizen" className="p-2 border border-border-color rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-          <ArrowLeft className="w-4 h-4 text-slate-600 dark:text-slate-400" />
+        <Link href="/citizen" className="p-2 border border-border-color rounded-lg hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors glass-card bg-transparent shadow-none">
+          <ArrowLeft className="w-4 h-4 text-slate-650 dark:text-slate-400" />
         </Link>
         <div>
           <h1 className="text-xl font-black text-slate-900 dark:text-white">Lodge Municipal Grievance</h1>
-          <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Submit your complaint. Fields marked with * are mandatory.</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400 font-bold">Submit your complaint. Fields marked with * are mandatory.</p>
         </div>
       </div>
 
       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
         {/* Left Form Panel */}
-        <div className="bg-white dark:bg-slate-900 border border-border-color rounded-xl p-6 shadow-sm flex flex-col gap-4.5">
-          <h2 className="font-extrabold text-xs text-slate-900 dark:text-white uppercase tracking-wider mb-2 border-b pb-1.5 flex items-center gap-1.5">
+        <div className="glass-card rounded-xl p-6 shadow-sm flex flex-col gap-4.5">
+          <h2 className="font-extrabold text-xs text-slate-900 dark:text-white uppercase tracking-wider mb-2 border-b border-border-color pb-1.5 flex items-center gap-1.5">
             <FileText className="w-4 h-4 text-[#0B3B82] dark:text-blue-400" /> Complaint Specifications
           </h2>
 
           <div className="flex flex-col gap-1.5">
-            <label className="text-[11px] font-bold text-slate-700 dark:text-slate-350 uppercase">Complaint Title *</label>
+            <label className="text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">Complaint Title *</label>
             <input
               type="text"
               required
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="e.g. Broken water pipe leaking on main road"
-              className="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white border border-border-color rounded-lg p-2.5 text-xs focus:outline-none focus:border-[#0B3B82]"
+              className="glass-input rounded-lg p-2.5 text-xs focus:outline-none"
             />
           </div>
 
           <div className="flex flex-col gap-1.5">
-            <label className="text-[11px] font-bold text-slate-700 dark:text-slate-350 uppercase">Detailed Description *</label>
+            <label className="text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">Detailed Description *</label>
             <textarea
               required
               rows={4}
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Provide exact landmarks, severity details, and duration of the problem..."
-              className="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white border border-border-color rounded-lg p-2.5 text-xs focus:outline-none focus:border-[#0B3B82]"
+              className="glass-input rounded-lg p-2.5 text-xs focus:outline-none"
             />
           </div>
 
@@ -155,7 +155,7 @@ export default function NewGrievanceForm() {
               type="button"
               disabled={aiLoading}
               onClick={handleAiAssist}
-              className="bg-blue-50 dark:bg-blue-950/20 text-[#0B3B82] dark:text-blue-400 border border-blue-200 dark:border-blue-900/50 hover:bg-blue-100 dark:hover:bg-blue-900/20 px-3.5 py-2 rounded-lg font-bold text-xs flex items-center gap-1.5 transition-all cursor-pointer"
+              className="bg-blue-500/10 dark:bg-blue-500/5 text-[#0B3B82] dark:text-blue-400 border border-blue-500/20 dark:border-blue-900/50 hover:bg-blue-500/20 px-3.5 py-2 rounded-lg font-bold text-xs flex items-center gap-1.5 transition-all cursor-pointer glass-card shadow-none"
             >
               <BrainCircuit className="w-4 h-4 text-[#0B3B82] dark:text-blue-400 animate-pulse" />
               <span>{aiLoading ? "AI Classifying..." : "AI Assist Route Pre-Check"}</span>
@@ -164,20 +164,20 @@ export default function NewGrievanceForm() {
 
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col gap-1.5">
-              <label className="text-[11px] font-bold text-slate-700 dark:text-slate-350 uppercase">District *</label>
+              <label className="text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">District *</label>
               <select
                 value={district}
                 onChange={(e) => setDistrict(e.target.value)}
-                className="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white border border-border-color rounded-lg p-2.5 text-xs focus:outline-none"
+                className="glass-input rounded-lg p-2.5 text-xs focus:outline-none"
               >
                 {districtsList.map((d) => (
-                  <option key={d} value={d}>{d}</option>
+                  <option key={d} value={d} className="bg-white dark:bg-slate-900 text-slate-900 dark:text-white">{d}</option>
                 ))}
               </select>
             </div>
             
             <div className="flex flex-col gap-1.5">
-              <label className="text-[11px] font-bold text-slate-700 dark:text-slate-350 uppercase">Pin Code *</label>
+              <label className="text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">Pin Code *</label>
               <input
                 type="text"
                 required
@@ -185,50 +185,50 @@ export default function NewGrievanceForm() {
                 value={pinCode}
                 onChange={(e) => setPinCode(e.target.value)}
                 placeholder="1100xx"
-                className="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white border border-border-color rounded-lg p-2.5 text-xs focus:outline-none focus:border-[#0B3B82]"
+                className="glass-input rounded-lg p-2.5 text-xs focus:outline-none"
               />
             </div>
           </div>
 
           <div className="flex flex-col gap-1.5">
-            <label className="text-[11px] font-bold text-slate-700 dark:text-slate-350 uppercase">Residential Address *</label>
+            <label className="text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">Residential Address *</label>
             <input
               type="text"
               required
               value={address}
               onChange={(e) => setAddress(e.target.value)}
               placeholder="Flat/House No, Pocket, Sector, Colony"
-              className="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white border border-border-color rounded-lg p-2.5 text-xs focus:outline-none focus:border-[#0B3B82]"
+              className="glass-input rounded-lg p-2.5 text-xs focus:outline-none"
             />
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col gap-1.5">
-              <label className="text-[11px] font-bold text-slate-700 dark:text-slate-350 uppercase">Reporter Name</label>
+              <label className="text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">Reporter Name</label>
               <input
                 type="text"
                 disabled={anonymous}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="bg-slate-100 dark:bg-slate-800 disabled:opacity-50 text-slate-850 dark:text-slate-300 border border-border-color rounded-lg p-2.5 text-xs"
+                className="glass-input disabled:opacity-50 rounded-lg p-2.5 text-xs"
               />
             </div>
             <div className="flex flex-col gap-1.5">
-              <label className="text-[11px] font-bold text-slate-700 dark:text-slate-350 uppercase">Contact Number</label>
+              <label className="text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">Contact Number</label>
               <input
                 type="text"
                 disabled={anonymous}
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="bg-slate-100 dark:bg-slate-800 disabled:opacity-50 text-slate-850 dark:text-slate-300 border border-border-color rounded-lg p-2.5 text-xs"
+                className="glass-input disabled:opacity-50 rounded-lg p-2.5 text-xs"
               />
             </div>
           </div>
 
-          <div className="flex items-center justify-between gap-4 bg-slate-50 dark:bg-slate-950 p-3 rounded-lg border border-border-color">
+          <div className="flex items-center justify-between gap-4 bg-slate-100/30 dark:bg-slate-950/40 p-3 rounded-lg border border-border-color">
             <div>
               <div className="text-xs font-extrabold text-slate-800 dark:text-slate-200 uppercase tracking-wide">Anonymous Mode</div>
-              <p className="text-[10px] text-slate-400 font-medium">Conceal identity from municipal officers.</p>
+              <p className="text-[10px] text-slate-450 dark:text-slate-500 font-bold">Conceal identity from municipal officers.</p>
             </div>
             <input
               type="checkbox"
@@ -241,7 +241,7 @@ export default function NewGrievanceForm() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-[#0B3B82] hover:bg-[#072a61] disabled:bg-slate-300 text-white font-bold p-3 rounded-lg flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer text-xs uppercase tracking-wider"
+            className="w-full bg-[#0B3B82] hover:bg-[#072a61] disabled:bg-slate-350 text-white font-bold p-3 rounded-lg flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer text-xs uppercase tracking-wider"
           >
             <Send className="w-4 h-4" />
             <span>{loading ? "Registering Grievance..." : "File Official Complaint"}</span>
@@ -254,13 +254,13 @@ export default function NewGrievanceForm() {
           <div className="flex flex-col gap-2">
             <div>
               <h3 className="font-extrabold text-xs text-slate-900 dark:text-white uppercase tracking-wider">Geotagging Pick Point *</h3>
-              <p className="text-[10px] text-slate-400 font-semibold">Click on the map to drop the GPS location pin of the issue.</p>
+              <p className="text-[10px] text-slate-450 dark:text-slate-500 font-bold">Click on the map to drop the GPS location pin of the issue.</p>
             </div>
             <div className="h-[280px]">
               <ComplaintMap selectedLocation={coords} onLocationSelect={handleLocationSelect} />
             </div>
             {coords && (
-              <div className="text-[10px] font-bold text-[#0B3B82] dark:text-blue-400 bg-blue-50 dark:bg-blue-950/40 p-2 rounded border border-blue-200 dark:border-blue-900">
+              <div className="text-[10px] font-bold text-[#0B3B82] dark:text-blue-400 bg-blue-500/10 dark:bg-blue-500/5 p-2 rounded border border-blue-500/20">
                 Selected GPS Coordinates: Latitude: {coords.lat.toFixed(5)}, Longitude: {coords.lng.toFixed(5)}
               </div>
             )}
@@ -268,23 +268,23 @@ export default function NewGrievanceForm() {
 
           {/* AI Precheck Preview Panel */}
           {aiPreview && (
-            <div className="bg-slate-900 text-slate-100 rounded-xl p-5 border border-slate-800 shadow-lg flex flex-col gap-3.5 animate-fade-in">
-              <h3 className="font-black text-xs text-blue-400 uppercase tracking-widest flex items-center gap-1.5 border-b border-slate-850 pb-2">
-                <Sparkles className="w-4 h-4 text-yellow-400 fill-yellow-400" /> Gemini AI Routing Summary
+            <div className="glass-card rounded-xl p-5 shadow-lg flex flex-col gap-3.5 animate-fade-in">
+              <h3 className="font-black text-xs text-blue-650 dark:text-blue-400 uppercase tracking-widest flex items-center gap-1.5 border-b border-border-color pb-2">
+                <Sparkles className="w-4 h-4 text-yellow-500 fill-yellow-500 animate-pulse" /> Gemini AI Routing Summary
               </h3>
               
-              <div className="grid grid-cols-2 gap-3.5 text-xs font-semibold">
+              <div className="grid grid-cols-2 gap-3.5 text-xs font-bold">
                 <div>
-                  <span className="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Assigned Department</span>
-                  <div className="text-white text-xs mt-0.5">{aiPreview.department}</div>
+                  <span className="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider font-bold">Assigned Department</span>
+                  <div className="text-slate-900 dark:text-slate-100 text-xs mt-0.5">{aiPreview.department}</div>
                 </div>
                 <div>
-                  <span className="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Category</span>
-                  <div className="text-white text-xs mt-0.5">{aiPreview.category}</div>
+                  <span className="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider font-bold">Category</span>
+                  <div className="text-slate-900 dark:text-slate-100 text-xs mt-0.5">{aiPreview.category}</div>
                 </div>
                 <div>
-                  <span className="text-[10px] text-slate-500 uppercase tracking-wider font-bold">AI Priority Assignment</span>
-                  <div className="text-white text-xs mt-0.5 uppercase tracking-wide flex items-center gap-1">
+                  <span className="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider font-bold">AI Priority Assignment</span>
+                  <div className="text-slate-900 dark:text-slate-100 text-xs mt-0.5 uppercase tracking-wide flex items-center gap-1">
                     <span className={`w-2 h-2 rounded-full ${
                       aiPreview.priority === 'Urgent' ? 'bg-red-500' :
                       aiPreview.priority === 'High' ? 'bg-orange-500' : 'bg-blue-500'
@@ -293,10 +293,10 @@ export default function NewGrievanceForm() {
                   </div>
                 </div>
                 <div>
-                  <span className="text-[10px] text-slate-500 uppercase tracking-wider font-bold">AI Urgency Rating</span>
+                  <span className="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider font-bold">AI Urgency Rating</span>
                   <div className={`text-sm font-black mt-0.5 ${
                     aiPreview.urgencyScore > 80 ? 'text-red-500 animate-pulse' :
-                    aiPreview.urgencyScore > 50 ? 'text-orange-400' : 'text-blue-400'
+                    aiPreview.urgencyScore > 50 ? 'text-orange-400' : 'text-blue-450'
                   }`}>
                     {aiPreview.urgencyScore} / 100
                   </div>
@@ -304,27 +304,27 @@ export default function NewGrievanceForm() {
               </div>
 
               {aiPreview.isCriticalAlert && (
-                <div className="bg-red-950/40 border border-red-900 rounded-lg p-2.5 text-[10px] text-red-300 font-bold flex items-start gap-1.5 animate-pulse">
+                <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-2.5 text-[10px] text-red-600 dark:text-red-400 font-bold flex items-start gap-1.5 animate-pulse">
                   <AlertCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
                   <div>
-                    <span className="uppercase block text-red-400">EMERGENCY CRITICAL ALERT DETECTED</span>
+                    <span className="uppercase block text-red-500 font-black">EMERGENCY CRITICAL ALERT DETECTED</span>
                     Exposed emergency terms trigger immediate War Room escalation.
                   </div>
                 </div>
               )}
 
-              <div className="border-t border-slate-800 pt-3">
-                <span className="text-[10px] text-slate-500 uppercase tracking-wider font-bold">AI Summary</span>
-                <p className="text-xs text-slate-300 font-medium italic mt-1">
+              <div className="border-t border-border-color pt-3">
+                <span className="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider font-bold">AI Summary</span>
+                <p className="text-xs text-slate-700 dark:text-slate-300 font-semibold italic mt-1">
                   "{aiPreview.summary}"
                 </p>
               </div>
 
               <div>
-                <span className="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Identified Keywords</span>
+                <span className="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider font-bold">Identified Keywords</span>
                 <div className="flex flex-wrap gap-1.5 mt-1">
                   {aiPreview.keywords.map((kw: string, i: number) => (
-                    <span key={i} className="bg-slate-800 text-slate-400 px-2 py-0.5 rounded text-[10px] font-semibold border border-slate-700">
+                    <span key={i} className="bg-slate-100/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-450 px-2 py-0.5 rounded text-[10px] font-bold border border-border-color">
                       {kw}
                     </span>
                   ))}

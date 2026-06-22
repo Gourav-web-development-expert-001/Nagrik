@@ -8,6 +8,7 @@ export interface IUser {
   role: 'Citizen' | 'Officer' | 'Department Head' | 'Chief Minister';
   department?: string;
   district?: string;
+  avatar?: string;
   trustScore: number;
   resolutionAccuracy: number;
   citizenSatisfaction: number;
@@ -21,6 +22,7 @@ const UserSchema = new Schema<IUser>({
   role: { type: String, required: true, enum: ['Citizen', 'Officer', 'Department Head', 'Chief Minister'] },
   department: { type: String },
   district: { type: String },
+  avatar: { type: String },
   trustScore: { type: Number, default: 100 },
   resolutionAccuracy: { type: Number, default: 100 },
   citizenSatisfaction: { type: Number, default: 100 },
